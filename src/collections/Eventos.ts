@@ -2,15 +2,21 @@ import { CollectionConfig } from 'payload/types'
 
 const Eventos: CollectionConfig = {
   slug: 'eventos',
-  auth: true,
   admin: {
     useAsTitle: 'name',
   },
   fields: [
     {
         name: 'nameEvent',
-        label: 'Nombre de evento',
+        label: 'Nombre del evento',
         type: 'text', 
+        required: true,
+      },
+      {
+        name: 'backgroundImage', // required
+        label: 'Subir imagen (1x1)',
+        type: 'upload', // required
+        relationTo: 'media', // required
         required: true,
       },
       {
@@ -21,6 +27,7 @@ const Eventos: CollectionConfig = {
       },
       {
         name: 'dateOnly',
+        label: 'Fecha',
         type: 'date',
         admin: {
           date: {
@@ -32,6 +39,7 @@ const Eventos: CollectionConfig = {
       },
       {
         name: 'timeOnly',
+        label: 'Hora',
         type: 'date',
         admin: {
           date: {
@@ -43,13 +51,13 @@ const Eventos: CollectionConfig = {
       },
       {
         name: 'duration',
-        label: 'duracion del evento',
+        label: 'Duración del evento',
         type: 'text',
         required: true,
       },
       {
         name: 'address',
-        label: 'direccion',
+        label: 'Dirección',
         type: 'text',
         required: true,
       },
