@@ -2,12 +2,9 @@ import { CollectionConfig } from 'payload/types'
 
 const Eventos: CollectionConfig = {
   slug: 'eventos',
+  auth: true,
   admin: {
     useAsTitle: 'name',
-  },
-  access: {
-    read: () => true,
-    write: () => true,
   },
   fields: [
     {
