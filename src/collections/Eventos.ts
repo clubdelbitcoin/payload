@@ -2,6 +2,13 @@ import { CollectionConfig } from 'payload/types'
 
 const Eventos: CollectionConfig = {
   slug: 'eventos',
+  access: {
+    // allow guest users to self-registration
+    create: () => true,
+    read:() => true,
+    update:() => true,
+    delete:() => true,
+  },
   admin: {
     useAsTitle: 'name',
   },
